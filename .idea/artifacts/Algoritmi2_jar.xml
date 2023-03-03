@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="Algoritmi2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Algoritmi2_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Algoritmi2.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/upo/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="Algoritmi2" />
+      </element>
+      <element id="library" level="project" name="lib" />
+      <element id="library" level="module" name="JUnit5.8.1" module-name="Algoritmi2" />
+    </root>
+  </artifact>
+</component>

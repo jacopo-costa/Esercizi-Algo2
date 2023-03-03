@@ -1,0 +1,21 @@
+COMPITO PRATICO 2
+(no gruppi - compito singolo)
+tecniche Greedy e Programmazione Dinamica
+ogni studente deve implementare un metodo che lavora su grafi pesati (avete la dichiarazione nell'interfaccia WeightedGraph)
+e un metodo Greedy o di Programmazione Dinamica che non lavora con i grafi (trovate gli scheletri di questi metodi su DIR).
+
+Sviluppate dei test JUnit che ne controllano il corretto funzionamento dei metodi sviluppati.
+
+Metodi da implementare (lasciate il resto così come è):
+
+Matricola che finisce per 0-1:   Floyd-Warshall e Huffman
+Matricola che finisce per 2-3:   Dijkstra e LCS
+Matricola che finisce per 4-5-6: Bellman-Ford e Intervalli Disgiunti
+Matricola che finisce per 7-8-9: Prim e Knapsack 0-1
+
+Per qualsiasi classe: se sono necessarie strutture aggiuntive (es. coda con priorità) potete implementarle voi
+(con un'implementazione basilare) o cercare nelle librerie di Java una classe che le implementi.
+
+Posizionate le classi con i metodi Greedy o di Programmazione Dinamica nel package upo.greedyNUMEROMATRICOLA o upo.progdinNUMEROMATRICOLA,
+mentre i metodi sui grafi li implementerete direttamente nel file del grafo pesato del pratico 1.
+Al termine del pratico, consegnerete un jar esattamente come per il pratico 1.

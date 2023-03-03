@@ -1,0 +1,35 @@
+COMPITO PRATICO 1
+(no gruppi - compito singolo)
+implementazione di Grafi. Implementate le interfacce Graph e WeightedGraph fornite, con il tipo
+di grafo specificato sotto (a seconda della matricola).
+Per i grafi pesati, NON implementate i metodi:
+- getBellmanFordShortestPaths
+- getDijkstraShortestPaths
+- getPrimMST
+- getKruskalMST
+- getFloydWarshallShortestPaths
+(fate in modo che lancino sempre una UnsupportedOperationException)
+
+Le classi devono essere fornite di test JUnit che ne controllano il corretto funzionamento.
+
+Classi da implementare
+Matricola che finisce per 0-1: AdjMatrixDir e AdjMatrixDirWeight
+Matricola che finisce per 2-3: AdjMatrixUndir e AdjMatrixUndirWeight
+Matricola che finisce per 4-5-6: AdjListDir e AdjListDirWeight
+Matricola che finisce per 7-8-9: AdjListUndir e AdjListUndirWeight
+
+IMPORTANTE: i vostri package devono essere cosi' organizzati:
+upo
+	graphNUMEROMATRICOLA
+			qui le vostre classi
+
+Rispettate RIGOROSAMENTE organizzazione e nome delle classi. Vi forniro' dei test per controllare
+la corretta organizzazione dei package. Nel caso trovaste degli errori nel JAR fornito,
+comunicatemeli.
+
+IMPORTANTE2: utilizzate BENE i concetti visti nel corso di Paradigmi. Soprattutto quelli riguardanti
+l'ereditarieta' ed il riutilizzo del codice. La cosa migliore in questo caso e' implementare prima il grafo
+pesato, e poi trattare quello non pesato come un caso particolare (si veda la discussione fatta a lezione)
+
+IMPORTANTISSIMO: per le visite, implementate la visita GENERICA vista a lezione, che prende come
+parametro la struttura per gestire i nodi grigi. In questa maniera avrete ben poco codice da scrivere.
