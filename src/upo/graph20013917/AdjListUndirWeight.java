@@ -265,7 +265,7 @@ public class AdjListUndirWeight implements WeightedGraph {
     }
 
     @Override
-    public Set<Set<String>> connectedComponents() throws UnsupportedOperationException {
+    public Set connectedComponents() throws UnsupportedOperationException {
         WeightedForest visitor = new WeightedForest();
         return visitor.getComponents(this);
     }

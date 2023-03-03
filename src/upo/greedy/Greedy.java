@@ -1,6 +1,6 @@
 package upo.greedy;
 
-import java.util.Map;
+import java.util.*;
 
 public class Greedy {
 
@@ -19,7 +19,64 @@ public class Greedy {
      * l'algoritmo visto a lezione.
      */
     public static Map<Character, String> getHuffmanCodes(Character[] characters, int[] f) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        class Node {
+            final Character name;
+            final Integer freq;
+            final Node left;
+            final Node right;
+
+            public Node(Character name, Integer freq, Node left, Node right) {
+                this.name = name;
+                this.freq = freq;
+                this.left = left;
+                this.right = right;
+            }
+        }
+
+        class huffmanEncode {
+            static void encodedString(Node root, String code, Map<Character, String> huffmanCode) {
+                if (root == null) {
+                    return;
+                }
+
+                if (isLeaf(root)) {
+                    huffmanCode.put(root.name, code.length() > 0 ? code : "1");
+                }
+
+                encodedString(root.left, code + "0", huffmanCode);
+                encodedString(root.right, code + "1", huffmanCode);
+            }
+
+            private static boolean isLeaf(Node root) {
+                return root.left == null && root.right == null;
+            }
+        }
+
+        if (characters.length == 0 || f.length == 0) {
+            throw new IllegalArgumentException("Passati argomenti vuoti");
+        }
+
+        PriorityQueue<Node> pn = new PriorityQueue<>(Comparator.comparingInt(n -> n.freq));
+        for (int i = 0; i < characters.length; i++) {
+            pn.add(new Node(characters[i], f[i], null, null));
+        }
+
+        while (pn.size() != 1) {
+            Node left = pn.poll();
+            Node right = pn.poll();
+
+            int sum = left.freq + right.freq;
+
+            pn.add(new Node(null, sum, left, right));
+        }
+
+        Node root = pn.peek();
+        Map<Character, String> huffmanCode = new HashMap<>();
+        huffmanEncode.encodedString(root, "", huffmanCode);
+
+        return huffmanCode;
+
+
     }
 
     /**
@@ -33,7 +90,25 @@ public class Greedy {
      * @return un vettore contenente gli indici del massimo insieme di intervalli disgiunti
      */
     public static Integer[] getMaxDisjointIntervals(Integer[] starting, Integer[] ending) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        ArrayList<Integer> indexes = new ArrayList<>(); //Arraylist di indici
+
+        for (int i = 0; i < ending.length; i++) {
+            int start = starting[i]; //Tempo d'inizio del lavoro in posizione i-esima
+            int end = ending[i]; //Tempo di fine del lavoro in posizione i-esima
+
+            if (indexes.isEmpty()) { //Se l'array d'indici è vuoto inserisci il primo lavoro e continua
+                indexes.add(i);
+                continue;
+            }
+
+            int index = indexes.get(indexes.size() - 1); //Indice dell'ultimo lavoro inserito
+            if (starting[i] <= ending[index]) { //Se il tempo d'inizio del lavoro in posizione i-esima è minore o uguale
+                continue;                       //a quello di fine in posizione index nell'array d'indici non lo aggiunge
+            }
+            indexes.add(i);
+        }
+
+        return indexes.toArray(new Integer[0]); //Ritorna l'ArrayList come nuovo array di interi
     }
 
     /**

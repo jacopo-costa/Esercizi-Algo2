@@ -15,7 +15,22 @@ public class DynamicProgramming {
      * @return una LCS di <code>s1</code> e <code>s2</code>
      */
     public static String LongestCommonSubsequence(String s1, String s2) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (s1.length() == 0 || s2.length() == 0) {
+            return "";
+        }
+
+        char c1 = s1.charAt(s1.length() - 1);
+        char c2 = s2.charAt(s2.length() - 1);
+
+        if (c1 == c2) {
+            return LongestCommonSubsequence(s1.substring(0, s1.length() - 1), s2.substring(0, s2.length() - 1)) + c1;
+        }
+
+        return max(LongestCommonSubsequence(s1, s2.substring(0, s2.length() - 1)), LongestCommonSubsequence(s1.substring(0, s1.length() - 1), s2));
+    }
+
+    private static String max(String lcs1, String lcs2) {
+        return (lcs1.length() > lcs2.length()) ? lcs1 : lcs2;
     }
 
     /**

@@ -140,14 +140,6 @@ class AdjListUndirWeightTest {
     }
 
     @Test
-    void getDFSTOTForest() {
-    }
-
-    @Test
-    void testGetDFSTOTForest() {
-    }
-
-    @Test
     void topologicalSort() {
         assertThrows(UnsupportedOperationException.class, () -> adjweightedlist.topologicalSort());
     }

@@ -2,7 +2,8 @@ package upo.progdin20013917;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DynamicProgrammingTest {
 
@@ -15,5 +16,13 @@ class DynamicProgrammingTest {
         boolean[] result = DynamicProgramming.getKnapsack01(weights, values, maxWeight);
 
         assertArrayEquals(expected, result);
+    }
+
+    @Test
+    void longestCommonSubsequence() {
+        String s1 = "GACATGC";
+        String s2 = "ATCGAG";
+
+        assertEquals("ACAG", DynamicProgramming.LongestCommonSubsequence(s1, s2));
     }
 }

@@ -203,7 +203,7 @@ public class WeightedForest {
 
         // Priority queue che ordina i suoi elementi secondo il comparatore passato, in questo caso
         // ordina in modo ascendente per i pesi degli archi
-        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingDouble(e -> e.getWeight()));
+        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
 
         // Aggiunge il vertice passato con un arco a 0 nella queue
         // e lo aggiunge al MAR
